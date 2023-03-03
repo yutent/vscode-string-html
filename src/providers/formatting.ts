@@ -12,7 +12,6 @@ import {
 
 import {
   getLanguageService as GetHTMLanguageService,
-  TextDocument as HTMLTextDocument,
   Position as HTMLPosition
 } from 'vscode-html-languageservice'
 

@@ -14,7 +14,7 @@ import {
 } from 'vscode-html-languageservice'
 
 import {
-  getCSSLanguageService as GetCSSLanguageService,
+  getSCSSLanguageService as GetSCSSLanguageService,
   LanguageService as CSSLanguageService,
   CompletionList as CSSCompletionList
 } from 'vscode-css-languageservice'
@@ -32,7 +32,7 @@ import {
 import { CompletionsCache } from '../cache'
 
 export class HTMLStyleCompletionItemProvider implements CompletionItemProvider {
-  private _cssLanguageService: CSSLanguageService = GetCSSLanguageService()
+  private _cssLanguageService: CSSLanguageService = GetSCSSLanguageService()
   private _HTMLanguageService: HTMLanguageService = GetHTMLanguageService()
   private _expression = /(\/\*\s*html\s*\*\/\s*`|html\s*`)([^`]*)(`)/g
   private _cache = new CompletionsCache()
@@ -130,9 +130,9 @@ export class HTMLStyleCompletionItemProvider implements CompletionItemProvider {
 }
 
 export class CSSCompletionItemProvider implements CompletionItemProvider {
-  private _CSSLanguageService: CSSLanguageService = GetCSSLanguageService()
+  private _CSSLanguageService: CSSLanguageService = GetSCSSLanguageService()
   private _expression =
-    /(\/\*\s*(css|less|scss|sass)\s*\*\/\s*`|(scss|sass|less|css)\s*`)([^`]*)(`)/g
+    /(\/\*\s*(css|less|scss|sass)\s*\*\/\s*`|css\s*`)([^`]*)(`)/g
   private _cache = new CompletionsCache()
 
   public provideCompletionItems(

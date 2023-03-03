@@ -2,10 +2,10 @@
   "name": "string-html-css",
   "displayName": "string-html-css",
   "description": "一个高亮js代码中的 html/css/scss/sass/less的字符串, 并支持emmet.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "yutent",
   "license": "MIT",
-  "icon": "docs/logo.png",
+  "icon": "assets/logo.png",
   "bugs": {
     "url": "https://github.com/yutent/vscode-string-html/issues"
   },
@@ -24,9 +24,8 @@
     "vscode": "^1.22.0"
   },
   "scripts": {
-    "compile": "npx tsc -p .",
-    "watch:compile": "npx tsc --watch -p .",
-    "package": "npx vsce package"
+    "start": "npx tsc --watch -p .",
+    "build": "npx tsc -p ."
   },
   "categories": [
     "Programming Languages"
@@ -116,7 +115,6 @@
     "@types/node": "7.0.43",
     "@types/vscode": "^1.22.0",
     "typescript": "^3.2.2",
-    "vsce": "^1.102.0",
     "vscode-languageserver-types": "^3.6.0"
   },
   "dependencies": {
