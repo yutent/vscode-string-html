@@ -1,0 +1,6 @@
+**/*.vsix
+**/*.js.map
+node_modules
+client
+.vscode
+.DS_STORE

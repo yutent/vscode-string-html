@@ -1,0 +1,127 @@
+{
+  "name": "string-html-css",
+  "displayName": "string-html-css",
+  "description": "一个高亮js代码中的 html/css/scss/sass/less的字符串, 并支持emmet.",
+  "version": "1.0.0",
+  "publisher": "yutent",
+  "license": "MIT",
+  "icon": "docs/logo.png",
+  "bugs": {
+    "url": "https://github.com/yutent/vscode-string-html/issues"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "template",
+    "polymer",
+    "lit-html"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yutent/vscode-string-html"
+  },
+  "engines": {
+    "vscode": "^1.22.0"
+  },
+  "scripts": {
+    "compile": "npx tsc -p .",
+    "watch:compile": "npx tsc --watch -p .",
+    "package": "npx vsce package"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact"
+  ],
+  "main": "./dist/main.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "editor.action.formatInlineHtml",
+        "title": "Format Inline HTML/CSS"
+      }
+    ],
+    "grammars": [
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.ts.tsx",
+          "source.tsx"
+        ],
+        "scopeName": "es6.inline.html",
+        "path": "./syntaxes/es6.inline.html.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.html": "html",
+          "meta.template.expression.ts": "typescript"
+        }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.ts.tsx",
+          "source.tsx"
+        ],
+        "scopeName": "es6.inline.css",
+        "path": "./syntaxes/es6.inline.css.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "css",
+          "meta.template.expression.ts": "typescript"
+        }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.ts.tsx",
+          "source.tsx"
+        ],
+        "scopeName": "es6.inline.scss",
+        "path": "./syntaxes/es6.inline.scss.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "scss",
+          "meta.template.expression.ts": "typescript"
+        }
+      },
+      {
+        "injectTo": [
+          "source.js",
+          "source.js.jsx",
+          "source.jsx",
+          "source.ts",
+          "source.ts.tsx",
+          "source.tsx"
+        ],
+        "scopeName": "es6.inline.less",
+        "path": "./syntaxes/es6.inline.less.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.css": "less",
+          "meta.template.expression.ts": "typescript"
+        }
+      }
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "7.0.43",
+    "@types/vscode": "^1.22.0",
+    "typescript": "^3.2.2",
+    "vsce": "^1.102.0",
+    "vscode-languageserver-types": "^3.6.0"
+  },
+  "dependencies": {
+    "vscode-css-languageservice": "^3.0.7",
+    "vscode-emmet-helper": "^1.2.0",
+    "vscode-html-languageservice": "^2.1.1"
+  }
+}
