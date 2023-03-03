@@ -131,7 +131,8 @@ export class HTMLStyleCompletionItemProvider implements CompletionItemProvider {
 
 export class CSSCompletionItemProvider implements CompletionItemProvider {
   private _CSSLanguageService: CSSLanguageService = GetCSSLanguageService()
-  private _expression = /(\/\*\s*(css|less|scss)\s*\*\/\s*`|css\s*`)([^`]*)(`)/g
+  private _expression =
+    /(\/\*\s*(css|less|scss|sass)\s*\*\/\s*`|(scss|sass|less|css)\s*`)([^`]*)(`)/g
   private _cache = new CompletionsCache()
 
   public provideCompletionItems(

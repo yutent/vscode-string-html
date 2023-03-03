@@ -54,10 +54,7 @@ export function MatchOffset(
   return null
 }
 
-export function Match(
-  regex: RegExp,
-  data: string
-): RegExpMatchArray {
+export function Match(regex: RegExp, data: string): RegExpMatchArray {
   regex.exec(null)
 
   let match: RegExpExecArray
@@ -115,9 +112,15 @@ export function TranslateHTMLTextEdits(
   offset: number
 ): TextEdit[] {
   return input.map((item: HTMLTextEdit) => {
-    const startPosition = new Position(item.range.start.line + offset, item.range.start.character);
-    const endPosition = new Position(item.range.end.line + offset - 1, item.range.end.character);
-    const itemRange = new Range(startPosition, endPosition);
+    const startPosition = new Position(
+      item.range.start.line + offset,
+      item.range.start.character
+    )
+    const endPosition = new Position(
+      item.range.end.line + offset - 1,
+      item.range.end.character
+    )
+    const itemRange = new Range(startPosition, endPosition)
     return new TextEdit(itemRange, item.newText)
   })
 }

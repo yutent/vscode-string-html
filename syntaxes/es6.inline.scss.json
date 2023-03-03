@@ -1,15 +1,10 @@
 {
-  "fileTypes": [
-    "js",
-    "jsx",
-    "ts",
-    "tsx"
-  ],
+  "fileTypes": ["js", "jsx", "ts", "tsx"],
   "injectionSelector": "L:source.js -comment -string, L:source.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string",
   "patterns": [
     {
       "contentName": "meta.embedded.block.css",
-      "begin": "(?x)(\\s*?(\\w+\\.)?(?:\/\\*\\s*scss\\s*\\*\/)\\s*)(`)",
+      "begin": "(?x)(\\s*?(\\w+\\.)?(?:scss|/\\*\\s*scss\\s*\\*/)\\s*)(`)",
       "beginCaptures": {
         "0": {
           "name": "string.template.ts, punctuation.definition.string.template.begin.ts"
