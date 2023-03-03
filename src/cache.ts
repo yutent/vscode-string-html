@@ -32,7 +32,7 @@ export class CompletionsCache {
   public updateCached(
     context: TextDocument,
     position: Position,
-    completions: CompletionList
+    completions: any
   ) {
     this._cachedCompletionsFile = context.fileName
     this._cachedCompletionsPosition = position

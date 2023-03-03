@@ -113,7 +113,7 @@ export class HTMLStyleCompletionItemProvider implements CompletionItemProvider {
       completions.isIncomplete = true
     }
 
-    this._cache.updateCached(document, position, completions as CompletionList)
+    this._cache.updateCached(document, position, completions)
 
     return {
       isIncomplete: completions.isIncomplete,
@@ -201,7 +201,7 @@ export class CSSCompletionItemProvider implements CompletionItemProvider {
       completions.isIncomplete = true
     }
 
-    this._cache.updateCached(document, position, completions as CompletionList)
+    this._cache.updateCached(document, position, completions)
 
     return {
       isIncomplete: completions.isIncomplete,
